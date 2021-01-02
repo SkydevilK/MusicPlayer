@@ -7,8 +7,8 @@
 
 import UIKit
 
-class HomeMusicListTableViewCell: UITableViewCell {
-    static let identifier: String = String(describing: HomeMusicListTableViewCell.self)
+class MusicListTableViewCell: UITableViewCell {
+    static let identifier: String = String(describing: MusicListTableViewCell.self)
     @IBOutlet weak var musicImageView: UIImageView!
     @IBOutlet weak var musicTitleLabel: UILabel!
     @IBOutlet weak var musicArtistLabel: UILabel!

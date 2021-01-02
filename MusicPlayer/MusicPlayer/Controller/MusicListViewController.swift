@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class MusicListViewController: UIViewController {
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var randomPlayButton: UIButton!
     @IBAction func playButtonAction(_ sender: UIButton) {
@@ -17,20 +17,29 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var musicListTableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        musicListTableView.register(UINib(nibName: HomeMusicListTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: HomeMusicListTableViewCell.identifier)
+        musicListTableView.register(UINib(nibName: MusicListTableViewCell.identifier, bundle: .main), forCellReuseIdentifier: MusicListTableViewCell.identifier)
         playButton.layer.cornerRadius = 10
         randomPlayButton.layer.cornerRadius = 10
         musicListTableView.delegate = self
         musicListTableView.dataSource = self
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
+            image: UIImage(named: "arrow.left"),
+            style: .plain,
+            target: self,
+            action: nil
+        )
+    }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+extension MusicListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeMusicListTableViewCell.identifier, for: indexPath) as? HomeMusicListTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MusicListTableViewCell.identifier, for: indexPath) as? MusicListTableViewCell else {
             return UITableViewCell()
         }
         return cell

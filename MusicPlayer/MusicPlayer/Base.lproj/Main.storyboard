@@ -31,22 +31,112 @@
             <objects>
                 <navigationController id="qez-Be-J9Q" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="홈 화면" image="music.house.fill" catalog="system" id="bXY-kw-i9a"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FJd-M7-Kx9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="arrow.left" catalog="system" backIndicatorTransitionMaskImage="arrow.left" id="FJd-M7-Kx9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="rnk-uj-D9S" kind="relationship" relationship="rootViewController" id="e4T-zP-R8A"/>
+                        <segue destination="ast-Nj-1Lg" kind="relationship" relationship="rootViewController" id="7o0-NF-CbL"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAu-Sn-flu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="-7"/>
         </scene>
-        <!--홈 화면-->
+        <!--View Controller-->
+        <scene sceneID="vP3-Cq-mNO">
+            <objects>
+                <viewController id="ast-Nj-1Lg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wt9-iE-6bn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3U-Ci-yse" userLabel="플레이리스트">
+                                <rect key="frame" x="24" y="112" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="4hG-CI-GaT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="플레이리스트">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="music.note.list" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HND-q2-oz8" userLabel="노래">
+                                <rect key="frame" x="24" y="184" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="j6A-Ug-6Sr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="노래">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="music.note" catalog="system" symbolScale="large"/>
+                                </state>
+                                <connections>
+                                    <segue destination="rnk-uj-D9S" kind="show" id="fRt-Yk-2Gu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i9I-IC-Af1" userLabel="앨범">
+                                <rect key="frame" x="24" y="256" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="sT2-2u-QOk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <inset key="titleEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="앨범">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="square.stack" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGA-LH-rkp" userLabel="다운로드됨">
+                                <rect key="frame" x="24" y="328" width="366" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="aux-lr-OG4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <inset key="titleEdgeInsets" minX="14" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="다운로드됨">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                    <imageReference key="image" image="arrow.down.circle" catalog="system" symbolScale="large"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gIa-22-vXf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wGA-LH-rkp" firstAttribute="trailing" secondItem="i9I-IC-Af1" secondAttribute="trailing" id="12d-ql-vf8"/>
+                            <constraint firstItem="gIa-22-vXf" firstAttribute="trailing" secondItem="v3U-Ci-yse" secondAttribute="trailing" constant="24" id="DqS-bo-Xpn"/>
+                            <constraint firstItem="v3U-Ci-yse" firstAttribute="top" secondItem="gIa-22-vXf" secondAttribute="top" constant="24" id="T4M-aR-nLT"/>
+                            <constraint firstItem="wGA-LH-rkp" firstAttribute="leading" secondItem="i9I-IC-Af1" secondAttribute="leading" id="WLz-rT-wmy"/>
+                            <constraint firstItem="i9I-IC-Af1" firstAttribute="trailing" secondItem="HND-q2-oz8" secondAttribute="trailing" id="aDg-jL-kTy"/>
+                            <constraint firstItem="HND-q2-oz8" firstAttribute="top" secondItem="v3U-Ci-yse" secondAttribute="bottom" constant="24" id="dva-dg-bSi"/>
+                            <constraint firstItem="HND-q2-oz8" firstAttribute="leading" secondItem="v3U-Ci-yse" secondAttribute="leading" id="ekG-oA-GrQ"/>
+                            <constraint firstItem="i9I-IC-Af1" firstAttribute="top" secondItem="HND-q2-oz8" secondAttribute="bottom" constant="24" id="epW-Ls-Lvh"/>
+                            <constraint firstItem="v3U-Ci-yse" firstAttribute="leading" secondItem="gIa-22-vXf" secondAttribute="leading" constant="24" id="hS7-Yh-nmL"/>
+                            <constraint firstItem="HND-q2-oz8" firstAttribute="trailing" secondItem="v3U-Ci-yse" secondAttribute="trailing" id="s9Z-P9-5vm"/>
+                            <constraint firstItem="wGA-LH-rkp" firstAttribute="top" secondItem="i9I-IC-Af1" secondAttribute="bottom" constant="24" id="tbn-Ji-FYA"/>
+                            <constraint firstItem="i9I-IC-Af1" firstAttribute="leading" secondItem="HND-q2-oz8" secondAttribute="leading" id="wDe-Rf-haI"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jCO-ET-VP6">
+                        <barButtonItem key="backBarButtonItem" title=" " id="rAs-Jp-PyF"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8dW-8H-Fjx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1659" y="-7"/>
+        </scene>
+        <!--노래-->
         <scene sceneID="41v-gk-da9">
             <objects>
-                <viewController id="rnk-uj-D9S" customClass="HomeViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rnk-uj-D9S" customClass="MusicListViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Of5-0q-byr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -107,7 +197,7 @@
                             <constraint firstItem="L1k-uG-5Nz" firstAttribute="bottom" secondItem="wK1-wY-C6b" secondAttribute="bottom" id="xir-qr-xRq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="홈 화면" id="qP1-Xv-yaq"/>
+                    <navigationItem key="navigationItem" title="노래" id="qP1-Xv-yaq"/>
                     <connections>
                         <outlet property="musicListTableView" destination="wK1-wY-C6b" id="iL0-hZ-E8n"/>
                         <outlet property="playButton" destination="Tsl-Q1-hIo" id="Ikt-Bl-eEm"/>
@@ -116,13 +206,21 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aOR-Nn-b2r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1792.753623188406" y="-7.3660714285714279"/>
+            <point key="canvasLocation" x="2671" y="-7"/>
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="music.house.fill" catalog="system" width="128" height="106"/>
+        <image name="music.note" catalog="system" width="97" height="128"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="shuffle" catalog="system" width="128" height="93"/>
+        <image name="square.stack" catalog="system" width="113" height="128"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
