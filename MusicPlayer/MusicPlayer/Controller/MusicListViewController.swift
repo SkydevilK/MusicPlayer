@@ -23,15 +23,6 @@ class MusicListViewController: UIViewController {
         musicListTableView.delegate = self
         musicListTableView.dataSource = self
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.navigationItem.backBarButtonItem = UIBarButtonItem(
-            image: UIImage(named: "arrow.left"),
-            style: .plain,
-            target: self,
-            action: nil
-        )
-    }
 }
 
 extension MusicListViewController: UITableViewDelegate, UITableViewDataSource {
