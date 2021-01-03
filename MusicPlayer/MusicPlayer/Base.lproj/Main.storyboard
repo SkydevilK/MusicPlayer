@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -96,6 +97,9 @@
                                     <color key="titleColor" systemColor="labelColor"/>
                                     <imageReference key="image" image="square.stack" catalog="system" symbolScale="large"/>
                                 </state>
+                                <connections>
+                                    <segue destination="x3S-Gl-RTu" kind="show" id="CSb-oK-fTb"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGA-LH-rkp" userLabel="다운로드됨">
                                 <rect key="frame" x="24" y="328" width="366" height="48"/>
@@ -300,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="2669.5652173913045" y="-702.45535714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Play List View Controller-->
         <scene sceneID="vnv-Pz-a37">
             <objects>
-                <viewController storyboardIdentifier="AddPlayListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WLa-09-kiX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddPlayListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WLa-09-kiX" customClass="AddPlayListViewController" customModule="MusicPlayer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EGa-vW-2hx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,10 +336,21 @@
                                     <imageReference key="image" image="plus.circle.fill" catalog="system" symbolScale="large"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-Mx-fDb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jfj-Mx-fDb">
                                 <rect key="frame" x="8" y="474.5" width="398" height="338.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BWT-Mc-J0a">
+                                <rect key="frame" x="175" y="198" width="64" height="68"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="AuK-n7-aoT"/>
+                                    <constraint firstAttribute="height" constant="64" id="hRi-iD-4xC"/>
+                                </constraints>
+                                <imageReference key="image" image="camera.circle.fill" catalog="system" symbolScale="large"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U83-BD-79H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -345,6 +360,7 @@
                             <constraint firstItem="P63-IT-xtO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U83-BD-79H" secondAttribute="leading" constant="16" id="544-jq-9be"/>
                             <constraint firstItem="U83-BD-79H" firstAttribute="trailing" secondItem="Jfj-Mx-fDb" secondAttribute="trailing" constant="8" id="5BR-sC-f8T"/>
                             <constraint firstItem="Iw9-LQ-IRR" firstAttribute="top" secondItem="U83-BD-79H" secondAttribute="top" constant="16" id="6vA-Ii-fcv"/>
+                            <constraint firstItem="BWT-Mc-J0a" firstAttribute="centerX" secondItem="Iw9-LQ-IRR" secondAttribute="centerX" id="OgM-Il-fb1"/>
                             <constraint firstItem="pvL-hR-Vdc" firstAttribute="leading" secondItem="U83-BD-79H" secondAttribute="leading" constant="8" id="SV8-d2-TW6"/>
                             <constraint firstItem="Jfj-Mx-fDb" firstAttribute="top" secondItem="pvL-hR-Vdc" secondAttribute="bottom" constant="8" id="Yca-vT-kLA"/>
                             <constraint firstItem="pvL-hR-Vdc" firstAttribute="top" secondItem="P63-IT-xtO" secondAttribute="bottom" constant="23" id="dbe-ub-iTl"/>
@@ -352,20 +368,95 @@
                             <constraint firstItem="U83-BD-79H" firstAttribute="bottom" secondItem="Jfj-Mx-fDb" secondAttribute="bottom" id="fYg-WC-ffA"/>
                             <constraint firstItem="Iw9-LQ-IRR" firstAttribute="centerX" secondItem="U83-BD-79H" secondAttribute="centerX" id="fmd-3K-HhP"/>
                             <constraint firstItem="P63-IT-xtO" firstAttribute="centerX" secondItem="U83-BD-79H" secondAttribute="centerX" id="irb-Wf-hY9"/>
+                            <constraint firstItem="BWT-Mc-J0a" firstAttribute="centerY" secondItem="Iw9-LQ-IRR" secondAttribute="centerY" id="moz-7g-OgK"/>
                             <constraint firstItem="Jfj-Mx-fDb" firstAttribute="centerX" secondItem="U83-BD-79H" secondAttribute="centerX" id="qzm-2Y-OXc"/>
                             <constraint firstItem="Jfj-Mx-fDb" firstAttribute="leading" secondItem="U83-BD-79H" secondAttribute="leading" constant="8" id="ynF-fS-Ofx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nn2-yb-x0D"/>
+                    <connections>
+                        <outlet property="cameraCircleFillImageVIew" destination="BWT-Mc-J0a" id="O9A-gc-sa3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-Ve-lEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3666.666666666667" y="-702.45535714285711"/>
         </scene>
+        <!--앨범-->
+        <scene sceneID="vkO-1i-qc1">
+            <objects>
+                <viewController id="x3S-Gl-RTu" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="00Z-Tq-th8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1p7-Xv-qwJ">
+                                <rect key="frame" x="20" y="98" width="165.5" height="58"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="  재생">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                    <imageReference key="image" image="play.fill" catalog="system" symbolScale="default"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mUs-9r-UK7">
+                                <rect key="frame" x="228.5" y="98" width="165.5" height="58"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <color key="tintColor" systemColor="systemPinkColor"/>
+                                <state key="normal" title="  임의 재생" image="shuffle" catalog="system">
+                                    <color key="titleColor" systemColor="systemPinkColor"/>
+                                </state>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LW0-90-p1o">
+                                <rect key="frame" x="8" y="164" width="398" height="649"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="niz-mj-uDm">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="BUT-So-hdt">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DAp-wR-9jm">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mOB-1F-59W"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1p7-Xv-qwJ" firstAttribute="height" secondItem="mOB-1F-59W" secondAttribute="height" multiplier="0.08" id="1g1-IX-TDD"/>
+                            <constraint firstItem="mUs-9r-UK7" firstAttribute="top" secondItem="mOB-1F-59W" secondAttribute="top" constant="10" id="3Dl-F6-74b"/>
+                            <constraint firstItem="1p7-Xv-qwJ" firstAttribute="width" secondItem="mOB-1F-59W" secondAttribute="width" multiplier="0.4" id="8xc-Nz-16i"/>
+                            <constraint firstItem="1p7-Xv-qwJ" firstAttribute="leading" secondItem="mOB-1F-59W" secondAttribute="leading" constant="20" id="8zm-j2-kEf"/>
+                            <constraint firstItem="mOB-1F-59W" firstAttribute="trailing" secondItem="LW0-90-p1o" secondAttribute="trailing" constant="8" id="H6r-Er-n4r"/>
+                            <constraint firstItem="mUs-9r-UK7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1p7-Xv-qwJ" secondAttribute="trailing" constant="8" symbolic="YES" id="MwY-m4-BOh"/>
+                            <constraint firstItem="mUs-9r-UK7" firstAttribute="width" secondItem="mOB-1F-59W" secondAttribute="width" multiplier="0.4" id="Pj1-oo-scm"/>
+                            <constraint firstItem="LW0-90-p1o" firstAttribute="top" secondItem="1p7-Xv-qwJ" secondAttribute="bottom" constant="8" id="Vhz-Ez-kaE"/>
+                            <constraint firstItem="mOB-1F-59W" firstAttribute="trailing" secondItem="mUs-9r-UK7" secondAttribute="trailing" constant="20" id="Wc7-x3-Fyu"/>
+                            <constraint firstItem="LW0-90-p1o" firstAttribute="leading" secondItem="mOB-1F-59W" secondAttribute="leading" constant="8" id="f5w-zs-Ye9"/>
+                            <constraint firstItem="mOB-1F-59W" firstAttribute="bottom" secondItem="LW0-90-p1o" secondAttribute="bottom" id="slD-Jy-Zsk"/>
+                            <constraint firstItem="mUs-9r-UK7" firstAttribute="height" secondItem="mOB-1F-59W" secondAttribute="height" multiplier="0.08" id="xe9-su-glm"/>
+                            <constraint firstItem="1p7-Xv-qwJ" firstAttribute="top" secondItem="mOB-1F-59W" secondAttribute="top" constant="10" id="z3a-re-U6Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="앨범" id="K3a-Qe-rNy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WkB-bm-zr6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2670" y="713"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
         <image name="music.house.fill" catalog="system" width="128" height="106"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>
