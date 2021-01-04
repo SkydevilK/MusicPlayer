@@ -20,6 +20,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="qez-Be-J9Q" kind="relationship" relationship="viewControllers" id="25J-nk-hWD"/>
+                        <segue destination="kfZ-ic-70i" kind="relationship" relationship="viewControllers" id="AFg-Mo-NYc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQt-Zp-GKo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -383,6 +384,53 @@
             </objects>
             <point key="canvasLocation" x="3666.666666666667" y="-702.45535714285711"/>
         </scene>
+        <!--검색-->
+        <scene sceneID="D38-IX-MqA">
+            <objects>
+                <viewController id="kfZ-ic-70i" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SK3-2n-MvJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="osu-sy-N0J">
+                                <rect key="frame" x="24" y="68" width="63" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="노래 제목 검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EG5-ho-Zuw">
+                                <rect key="frame" x="24" y="119" width="366" height="43"/>
+                                <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qTf-6u-G1p">
+                                <rect key="frame" x="24" y="170" width="366" height="643"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zkI-uH-dIK"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zkI-uH-dIK" firstAttribute="bottom" secondItem="qTf-6u-G1p" secondAttribute="bottom" id="7Gg-nX-Noa"/>
+                            <constraint firstItem="qTf-6u-G1p" firstAttribute="leading" secondItem="zkI-uH-dIK" secondAttribute="leading" constant="24" id="FBg-1H-6dA"/>
+                            <constraint firstItem="zkI-uH-dIK" firstAttribute="trailing" secondItem="qTf-6u-G1p" secondAttribute="trailing" constant="24" id="HBR-uM-WtO"/>
+                            <constraint firstItem="zkI-uH-dIK" firstAttribute="trailing" secondItem="EG5-ho-Zuw" secondAttribute="trailing" constant="24" id="M8Z-Zt-3SY"/>
+                            <constraint firstItem="osu-sy-N0J" firstAttribute="leading" secondItem="zkI-uH-dIK" secondAttribute="leading" constant="24" id="UN5-3j-qyR"/>
+                            <constraint firstItem="osu-sy-N0J" firstAttribute="top" secondItem="zkI-uH-dIK" secondAttribute="top" constant="24" id="WvS-2a-8Ac"/>
+                            <constraint firstItem="zkI-uH-dIK" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="osu-sy-N0J" secondAttribute="trailing" symbolic="YES" id="f2M-34-zeI"/>
+                            <constraint firstItem="EG5-ho-Zuw" firstAttribute="top" secondItem="osu-sy-N0J" secondAttribute="bottom" constant="8" symbolic="YES" id="rNx-2m-WDP"/>
+                            <constraint firstItem="EG5-ho-Zuw" firstAttribute="leading" secondItem="zkI-uH-dIK" secondAttribute="leading" constant="24" id="tpw-DI-5GZ"/>
+                            <constraint firstItem="qTf-6u-G1p" firstAttribute="top" secondItem="EG5-ho-Zuw" secondAttribute="bottom" constant="8" symbolic="YES" id="vpj-se-2El"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="FhE-6Q-XKk"/>
+                    <navigationItem key="navigationItem" id="RQs-65-mQD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gBX-Xl-o5s" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1811.594202898551" y="1420.9821428571429"/>
+        </scene>
         <!--앨범-->
         <scene sceneID="vkO-1i-qc1">
             <objects>
@@ -452,6 +500,7 @@
         <image name="arrow.down.circle" catalog="system" width="128" height="121"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="camera.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="music.house.fill" catalog="system" width="128" height="106"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="music.note.list" catalog="system" width="128" height="115"/>
@@ -470,6 +519,9 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
