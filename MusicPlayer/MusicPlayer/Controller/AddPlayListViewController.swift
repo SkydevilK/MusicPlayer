@@ -39,11 +39,10 @@ extension AddPlayListViewController: UIImagePickerControllerDelegate,
         present(picker, animated: false, completion: nil)
     }
     func openCamera() {
-        if(UIImagePickerController .isSourceTypeAvailable(.camera)){
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
             picker.sourceType = .camera
             present(picker, animated: false, completion: nil)
-        }
-        else{
+        } else {
             print("Camera not available")
         }
     }

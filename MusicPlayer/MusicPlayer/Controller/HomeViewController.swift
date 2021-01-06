@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBAction func playListButton(_ sender: UIButton) {
         let playListViewController = self.storyboard?.instantiateViewController(withIdentifier: "PlayListViewController")
-        self.navigationController?.pushViewController(playListViewController!, animated: true)   
+        self.navigationController?.pushViewController(playListViewController!, animated: true)
     }
     @IBAction func musicListButton(_ sender: UIButton) {
         let musicListViewController = self.storyboard?.instantiateViewController(withIdentifier: "MusicListViewController")
