@@ -353,6 +353,12 @@
                                 <imageReference key="image" image="camera.circle.fill" catalog="system" symbolScale="large"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ef-r0-VAY">
+                                <rect key="frame" x="175" y="156" width="64" height="64"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="WLa-09-kiX" eventType="touchUpInside" id="dnU-fq-wPS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="U83-BD-79H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -362,9 +368,12 @@
                             <constraint firstItem="P63-IT-xtO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="U83-BD-79H" secondAttribute="leading" constant="16" id="544-jq-9be"/>
                             <constraint firstItem="U83-BD-79H" firstAttribute="trailing" secondItem="Jfj-Mx-fDb" secondAttribute="trailing" constant="8" id="5BR-sC-f8T"/>
                             <constraint firstItem="Iw9-LQ-IRR" firstAttribute="top" secondItem="U83-BD-79H" secondAttribute="top" constant="16" id="6vA-Ii-fcv"/>
+                            <constraint firstItem="4ef-r0-VAY" firstAttribute="height" secondItem="BWT-Mc-J0a" secondAttribute="height" id="Mmt-un-QXu"/>
                             <constraint firstItem="BWT-Mc-J0a" firstAttribute="centerX" secondItem="Iw9-LQ-IRR" secondAttribute="centerX" id="OgM-Il-fb1"/>
                             <constraint firstItem="pvL-hR-Vdc" firstAttribute="leading" secondItem="U83-BD-79H" secondAttribute="leading" constant="8" id="SV8-d2-TW6"/>
                             <constraint firstItem="Jfj-Mx-fDb" firstAttribute="top" secondItem="pvL-hR-Vdc" secondAttribute="bottom" constant="8" id="Yca-vT-kLA"/>
+                            <constraint firstItem="4ef-r0-VAY" firstAttribute="width" secondItem="BWT-Mc-J0a" secondAttribute="width" id="ao1-AB-4c6"/>
+                            <constraint firstItem="4ef-r0-VAY" firstAttribute="centerY" secondItem="BWT-Mc-J0a" secondAttribute="centerY" id="dFe-xm-q4u"/>
                             <constraint firstItem="pvL-hR-Vdc" firstAttribute="top" secondItem="P63-IT-xtO" secondAttribute="bottom" constant="23" id="dbe-ub-iTl"/>
                             <constraint firstItem="U83-BD-79H" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="P63-IT-xtO" secondAttribute="trailing" constant="16" id="drB-jV-wpB"/>
                             <constraint firstItem="U83-BD-79H" firstAttribute="bottom" secondItem="Jfj-Mx-fDb" secondAttribute="bottom" id="fYg-WC-ffA"/>
@@ -372,12 +381,14 @@
                             <constraint firstItem="P63-IT-xtO" firstAttribute="centerX" secondItem="U83-BD-79H" secondAttribute="centerX" id="irb-Wf-hY9"/>
                             <constraint firstItem="BWT-Mc-J0a" firstAttribute="centerY" secondItem="Iw9-LQ-IRR" secondAttribute="centerY" id="moz-7g-OgK"/>
                             <constraint firstItem="Jfj-Mx-fDb" firstAttribute="centerX" secondItem="U83-BD-79H" secondAttribute="centerX" id="qzm-2Y-OXc"/>
+                            <constraint firstItem="4ef-r0-VAY" firstAttribute="centerX" secondItem="BWT-Mc-J0a" secondAttribute="centerX" id="wji-i3-cls"/>
                             <constraint firstItem="Jfj-Mx-fDb" firstAttribute="leading" secondItem="U83-BD-79H" secondAttribute="leading" constant="8" id="ynF-fS-Ofx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nn2-yb-x0D"/>
                     <connections>
                         <outlet property="cameraCircleFillImageVIew" destination="BWT-Mc-J0a" id="O9A-gc-sa3"/>
+                        <outlet property="playListImageView" destination="Iw9-LQ-IRR" id="6YJ-Dt-N5a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTl-Ve-lEO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
