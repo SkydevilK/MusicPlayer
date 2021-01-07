@@ -13,6 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     static var musicListURL = [URL]()
     var audioPlayer: AVAudioPlayer?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(.playback)
+        } catch {
+            print("Setting category to AVAudioSessionCategoryPlayback failed.")
+        }
         let bundle = Bundle.main
         let path = bundle.path(forResource: "musicList", ofType: "txt")
         let text = try? String(contentsOfFile: path!)
