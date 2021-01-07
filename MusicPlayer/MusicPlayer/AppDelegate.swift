@@ -6,11 +6,28 @@
 //
 
 import UIKit
+import AVFoundation
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static var musicListURL = [URL]()
+    var audioPlayer: AVAudioPlayer?
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let bundle = Bundle.main
+        let path = bundle.path(forResource: "musicList", ofType: "txt")
+        let text = try? String(contentsOfFile: path!)
+        let musicList = text!.split(separator: ",")
+        for music in musicList {
+            if let path = Bundle.main.path(forResource: String(music), ofType: nil) {
+                AppDelegate.musicListURL.append(URL(fileURLWithPath: path))
+            }
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: AppDelegate.musicListURL[0])
+            audioPlayer?.play()
+        } catch {
+            print(error)
+        }
         return true
     }
     // MARK: UISceneSession Lifecycle
